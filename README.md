@@ -1,59 +1,190 @@
-# NtoUltimateInfo
+# 🍥 NTO Ultimate Hub
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.10.
+> O portal definitivo de informações sobre **Naruto TO Ultimate**.
 
-## Development server
+O **NTO Ultimate Hub** foi criado com um objetivo simples: reunir **TUDO** que um jogador de Naruto TO Ultimate precisa em um único lugar.
 
-To start a local development server, run:
+De builds avançadas até guias completos, hunts, itens, cartas, PvP, PvE, eventos e sistemas do jogo — este projeto nasce para se tornar a principal referência da comunidade.
+
+---
+
+## 🚀 Visão do Projeto
+
+O NTO Ultimate Hub não é apenas uma wiki.
+
+A proposta é construir uma plataforma completa para jogadores iniciantes, intermediários e veteranos, com foco em:
+
+- 📚 **Wiki completa de personagens**
+- ⚔️ **Builds PvE e PvP**
+- 🏹 **Comparação entre estilos de combate**
+  - Luvas
+  - Espada
+  - Distância
+- 🎯 **Tier Lists atualizadas**
+- 🗺️ **Guias de hunts e farm**
+- 🎴 **Database de cartas**
+- 🧰 **Ferramentas utilitárias**
+- 🤖 **Macros e automações**
+- 📰 **Eventos atuais do jogo**
+- 👹 **Bosses e invasões**
+- 🦊 **Sistema de Bijuus**
+- 🏰 **Guilds e sistemas sociais**
+- 💬 **Integração com comunidade**
+- 📈 **Meta analysis e recomendações**
+
+Tudo isso com uma interface moderna, rápida e intuitiva.
+
+---
+
+## 🛠️ Stack Tecnológica
+
+Projeto desenvolvido com tecnologias modernas:
+
+- **Angular 20**
+- **Angular SSR**
+- **TypeScript**
+- **SCSS**
+- **Angular Router**
+- **Standalone Components**
+- **Node.js**
+
+Arquitetura pensada para escalabilidade e crescimento contínuo.
+
+---
+
+## 🧠 Arquitetura
+
+A aplicação foi construída para permitir expansão modular.
+
+Cada personagem possui sua própria estrutura de dados independente:
+
+```text
+src/app/data/characters/
+```
+
+Exemplo:
+
+```text
+naruto.data.ts
+sasuke.data.ts
+madara.data.ts
+itachi.data.ts
+```
+
+Cada arquivo contém:
+
+- informações do personagem
+- builds
+- PvE guide
+- PvP guide
+- itens
+- cartas
+- macros
+
+Isso permite manutenção simples e evolução rápida.
+
+---
+
+## ✨ Funcionalidades Atuais
+
+Atualmente o projeto já conta com:
+
+✅ Home premium  
+✅ Sidebar interativa colapsável  
+✅ Navbar moderna  
+✅ Wiki de personagens  
+✅ Busca por personagem  
+✅ Filtros avançados  
+✅ Ordenação:
+- Nome A-Z
+- Nome Z-A
+- Melhor PvE
+- Melhor PvP
+
+✅ Filtros multi-select:
+- Tier PvE
+- Tier PvP
+- Dificuldade
+- Tipo de build
+
+✅ Página premium individual por personagem  
+✅ Build selector dinâmico  
+✅ Persistência de layout via LocalStorage  
+✅ Integração com Discord oficial da comunidade  
+
+---
+
+## 🔥 Roadmap
+
+Próximas funcionalidades planejadas:
+
+- [ ] Busca global autocomplete
+- [ ] Sistema de hunts
+- [ ] Database completa de itens
+- [ ] Database de cartas
+- [ ] Sistema de quests
+- [ ] Eventos em tempo real
+- [ ] Battle Pass guide
+- [ ] PvP matchup analyzer
+- [ ] Build calculator
+- [ ] Meta dashboard
+- [ ] Fórum interno
+- [ ] Painel administrativo
+- [ ] Sistema de autenticação
+- [ ] Integração com APIs externas
+
+---
+
+## 💻 Como rodar o projeto
+
+### Instalar dependências
+
+```bash
+npm install
+```
+
+### Rodar ambiente local
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Acesse:
 
 ```bash
-ng generate component component-name
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
+
+## 🔄 Gerar registry automático de personagens
+
+Sempre que adicionar novos personagens:
 
 ```bash
-ng generate --help
+npm run sync:characters
 ```
 
-## Building
+Isso gera automaticamente:
 
-To build the project run:
-
-```bash
-ng build
+```text
+src/app/data/characters/registry.ts
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 🌐 Comunidade Oficial
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Discord oficial do Naruto TO Ultimate:
 
-```bash
-ng test
-```
+https://discord.com/invite/JqQkMteB?utm_source=Discord%20Widget&utm_medium=Connect
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 👨‍💻 Desenvolvimento
 
-```bash
-ng e2e
-```
+Projeto em desenvolvimento ativo com foco em performance, UX premium e escalabilidade.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# Believe it. 🍥
