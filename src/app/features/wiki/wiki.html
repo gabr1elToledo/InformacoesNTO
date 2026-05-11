@@ -1,0 +1,126 @@
+<section class="wiki-layout">
+  <aside
+    class="filters-sidebar"
+    [class.collapsed]="filtersCollapsed"
+  >
+    <div class="sidebar-top">
+      <h2>Filtros</h2>
+
+      <button
+        class="collapse-btn"
+        (click)="toggleFilters()"
+      >
+        {{ filtersCollapsed ? '→' : '←' }}
+      </button>
+    </div>
+
+    @if (!filtersCollapsed) {
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        placeholder="Buscar personagem..."
+      />
+
+      <div class="filter-group">
+        <h3>Ordenação</h3>
+
+        <select [(ngModel)]="sortOption">
+          <option value="az">Nome A-Z</option>
+          <option value="za">Nome Z-A</option>
+          <option value="pve">Melhor PvE</option>
+          <option value="pvp">Melhor PvP</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <h3>Tipo de Build</h3>
+
+        <div class="chips">
+          <button (click)="setBuildFilter('todos')">Todos</button>
+          <button (click)="setBuildFilter('luvas')">🥊</button>
+          <button (click)="setBuildFilter('espada')">⚔️</button>
+          <button (click)="setBuildFilter('distancia')">🏹</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h3>PvE Tier</h3>
+
+        @for (tier of ['S','A','B','C','D','E','F']; track tier) {
+          <label class="custom-checkbox">
+            <input
+              type="checkbox"
+              (change)="toggleSelection(selectedPveTiers, tier)"
+            />
+            <span class="checkmark"></span>
+            <span>{{ tier }}</span>
+          </label>
+        }
+      </div>
+
+      <div class="filter-group">
+        <h3>PvP Tier</h3>
+
+        @for (tier of ['S','A','B','C','D','E','F']; track tier) {
+          <label class="custom-checkbox">
+            <input
+              type="checkbox"
+              (change)="toggleSelection(selectedPvpTiers, tier)"
+            />
+            <span class="checkmark"></span>
+            <span>{{ tier }}</span>
+          </label>
+        }
+      </div>
+
+      <div class="filter-group">
+        <h3>Dificuldade</h3>
+
+        @for (diff of ['Baixa','Média','Alta']; track diff) {
+          <label class="custom-checkbox">
+            <input
+              type="checkbox"
+              (change)="toggleSelection(selectedDifficulties, diff)"
+            />
+            <span class="checkmark"></span>
+            <span>{{ diff }}</span>
+          </label>
+        }
+      </div>
+    }
+  </aside>
+
+  <main class="wiki-content">
+    <section class="wiki-header">
+      <h1>Wiki de Personagens</h1>
+      <p>Explore builds, tiers e estratégias.</p>
+    </section>
+
+    <section class="characters-grid">
+      @for (character of filteredCharacters; track character.id) {
+        <a
+          class="character-card"
+          [routerLink]="['/wiki', character.slug]"
+        >
+          <div class="character-image">
+            <img
+              [src]="character.image"
+              [alt]="character.name"
+            />
+          </div>
+
+          <div class="card-content">
+            <h3>{{ character.name }}</h3>
+
+            <div class="tiers">
+              <span>PvE {{ character.tierPve }}</span>
+              <span>PvP {{ character.tierPvp }}</span>
+            </div>
+
+            <p>{{ character.description }}</p>
+          </div>
+        </a>
+      }
+    </section>
+  </main>
+</section>

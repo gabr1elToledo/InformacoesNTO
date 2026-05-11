@@ -1,0 +1,1 @@
+export { ALL_CHARACTER_PAGES, ALL_CHARACTERS } from './registry';

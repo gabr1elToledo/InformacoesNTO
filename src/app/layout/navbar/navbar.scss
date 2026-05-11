@@ -1,0 +1,80 @@
+.navbar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: rgba(10, 15, 25, 0.96);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.12);
+  backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+}
+
+.search {
+  flex: 1;
+  padding: 0 3rem;
+}
+
+.search input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  background: rgba(30, 41, 59, 0.95);
+  color: white;
+  font-size: 0.95rem;
+}
+
+.search input::placeholder {
+  color: #94a3b8;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.actions button {
+  padding: 0.9rem 1.3rem;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.discord-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+}
+
+.actions button:hover {
+  transform: translateY(-2px);
+}
+
+.discord-btn {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

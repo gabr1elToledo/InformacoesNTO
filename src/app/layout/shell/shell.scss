@@ -1,0 +1,18 @@
+.app-shell {
+  min-height: 100vh;
+  background: #0d1117;
+  color: #f1f5f9;
+}
+
+.app-body {
+  display: flex;
+  min-height: calc(100vh - 140px);
+}
+
+.app-content {
+  flex: 1;
+  padding: 2rem;
+  background:
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.08), transparent),
+    linear-gradient(180deg, #0d1117 0%, #111827 100%);
+}

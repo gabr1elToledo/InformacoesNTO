@@ -1,0 +1,183 @@
+@if (characterPage) {
+  <section class="character-hero">
+    <div class="hero-backdrop"></div>
+
+    <div class="hero-content">
+      <div class="hero-image">
+        <img
+          [src]="characterPage.character.image"
+          [alt]="characterPage.character.name"
+        />
+      </div>
+
+      <div class="hero-info">
+        <span class="hero-badge">Personagem</span>
+
+        <h1>{{ characterPage.character.name }}</h1>
+
+        <p>{{ characterPage.character.description }}</p>
+
+        <div class="stats">
+          <div class="stat-card">
+            <span class="label">Tier PvE</span>
+            <span class="value">{{ characterPage.character.tierPve }}</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="label">Tier PvP</span>
+            <span class="value">{{ characterPage.character.tierPvp }}</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="label">Dificuldade</span>
+            <span class="value">{{ characterPage.character.difficulty }}</span>
+          </div>
+        </div>
+
+        <div class="build-types">
+          @for (build of characterPage.character.buildTypes; track build) {
+            <span>{{ build }}</span>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tabs">
+    <button (click)="setTab('overview')">Visão Geral</button>
+    <button (click)="setTab('builds')">Builds</button>
+    <button (click)="setTab('pve')">PvE</button>
+    <button (click)="setTab('pvp')">PvP</button>
+    <button (click)="setTab('items')">Itens</button>
+    <button (click)="setTab('cards')">Cartas</button>
+    <button (click)="setTab('macros')">Macros</button>
+  </section>
+
+  @if (activeTab === 'overview') {
+    <section class="content-card">
+      <h2>Visão Geral</h2>
+      <p>{{ characterPage.character.description }}</p>
+    </section>
+  }
+
+  @if (activeTab === 'builds') {
+    <section class="content-card">
+      <h2>Builds</h2>
+
+      <div class="build-selector">
+        @for (build of characterPage.builds; track build.id) {
+          <button
+            (click)="selectBuild(build)"
+            [class.active]="selectedBuild?.id === build.id"
+          >
+            {{ getBuildLabel(build.type) }}
+          </button>
+        }
+      </div>
+
+      @if (selectedBuild) {
+        <div class="build-card">
+          <h3>{{ selectedBuild.title }}</h3>
+
+          <div class="mini-badges">
+            <span>PvE {{ selectedBuild.pveTier }}</span>
+            <span>PvP {{ selectedBuild.pvpTier }}</span>
+            <span>{{ getBuildLabel(selectedBuild.type) }}</span>
+          </div>
+
+          <h4>Recomendado para</h4>
+
+          <ul>
+            @for (item of selectedBuild.recommendedFor; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+
+          <h4>Pontos fortes</h4>
+
+          <ul>
+            @for (item of selectedBuild.strengths; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+
+          <h4>Pontos fracos</h4>
+
+          <ul>
+            @for (item of selectedBuild.weaknesses; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+
+          <h4>Combo</h4>
+
+          <ul>
+            @for (item of selectedBuild.combo; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </section>
+  }
+
+  @if (activeTab === 'pve') {
+    <section class="content-card">
+      <h2>Guia PvE</h2>
+
+      <ul>
+        @for (tip of characterPage.pveGuide.tips; track tip) {
+          <li>{{ tip }}</li>
+        }
+      </ul>
+    </section>
+  }
+
+  @if (activeTab === 'pvp') {
+    <section class="content-card">
+      <h2>Guia PvP</h2>
+
+      <ul>
+        @for (combo of characterPage.pvpGuide.combos; track combo) {
+          <li>{{ combo }}</li>
+        }
+      </ul>
+    </section>
+  }
+
+  @if (activeTab === 'items') {
+    <section class="content-card">
+      <h2>Itens</h2>
+
+      <ul>
+        @for (item of characterPage.items; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </section>
+  }
+
+  @if (activeTab === 'cards') {
+    <section class="content-card">
+      <h2>Cartas</h2>
+
+      <ul>
+        @for (card of characterPage.cards; track card) {
+          <li>{{ card }}</li>
+        }
+      </ul>
+    </section>
+  }
+
+  @if (activeTab === 'macros') {
+    <section class="content-card">
+      <h2>Macros</h2>
+
+      <ul>
+        @for (macro of characterPage.macros; track macro) {
+          <li>{{ macro }}</li>
+        }
+      </ul>
+    </section>
+  }
+}

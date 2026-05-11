@@ -1,0 +1,96 @@
+<aside
+  class="sidebar"
+  [class.collapsed]="collapsed"
+>
+  <div class="sidebar-header">
+    @if (!collapsed) {
+      <div class="sidebar-title">Explorar</div>
+    }
+
+    <button
+      class="collapse-btn"
+      (click)="toggleSidebar()"
+    >
+      {{ collapsed ? '→' : '←' }}
+    </button>
+  </div>
+
+  <nav>
+    <a
+      routerLink="/"
+      title="Início"
+    >
+      <span>🏠</span>
+      @if (!collapsed) {
+        <span>Início</span>
+      }
+    </a>
+
+    <a
+      routerLink="/wiki"
+      title="Wiki"
+    >
+      <span>📚</span>
+      @if (!collapsed) {
+        <span>Wiki</span>
+      }
+    </a>
+
+    <a
+      routerLink="/forum"
+      title="Fórum"
+    >
+      <span>💬</span>
+      @if (!collapsed) {
+        <span>Fórum</span>
+      }
+    </a>
+
+    <a
+      routerLink="/news"
+      title="Notícias"
+    >
+      <span>📰</span>
+      @if (!collapsed) {
+        <span>Notícias</span>
+      }
+    </a>
+
+    <a
+      routerLink="/builds"
+      title="Builds"
+    >
+      <span>⚔️</span>
+      @if (!collapsed) {
+        <span>Builds</span>
+      }
+    </a>
+
+    <a
+      routerLink="/tools"
+      title="Ferramentas"
+    >
+      <span>🧮</span>
+      @if (!collapsed) {
+        <span>Ferramentas</span>
+      }
+    </a>
+
+    <a
+      routerLink="/admin"
+      title="Admin"
+    >
+      <span>🛠️</span>
+      @if (!collapsed) {
+        <span>Admin</span>
+      }
+    </a>
+  </nav>
+
+  @if (!collapsed) {
+    <div class="sidebar-info">
+      <h4>Status do Portal</h4>
+      <p>Em desenvolvimento 🚀</p>
+    </div>
+  }
+</aside>
