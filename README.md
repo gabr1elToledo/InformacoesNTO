@@ -1,6 +1,6 @@
-# 🍥 NTO Ultimate Hub
+# 🍥 NTO Ultimate Wiki e Infos
 
-> O portal definitivo de informações sobre **Naruto TO Ultimate**.
+> O portal definitivo de informações sobre **Naruto Ultimate**.
 
 O **NTO Ultimate Hub** foi criado com um objetivo simples: reunir **TUDO** que um jogador de Naruto TO Ultimate precisa em um único lugar.
 
@@ -10,7 +10,7 @@ De builds avançadas até guias completos, hunts, itens, cartas, PvP, PvE, event
 
 ## 🚀 Visão do Projeto
 
-O NTO Ultimate Hub não é apenas uma wiki.
+O NTO Ultimate Wiki e Infos não é apenas uma wiki.
 
 A proposta é construir uma plataforma completa para jogadores iniciantes, intermediários e veteranos, com foco em:
 
@@ -175,7 +175,7 @@ src/app/data/characters/registry.ts
 
 ## 🌐 Comunidade Oficial
 
-Discord oficial do Naruto TO Ultimate:
+Discord oficial do Naruto Ultimate:
 
 https://discord.com/invite/JqQkMteB?utm_source=Discord%20Widget&utm_medium=Connect
 
