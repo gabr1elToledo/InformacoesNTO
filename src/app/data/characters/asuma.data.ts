@@ -6,7 +6,7 @@ const DATA: CharacterPage = {
     id: 'asuma',
     name: 'Asuma',
     slug: 'asuma',
-    image: 'characters/asuma.jpg',
+    image: 'characters/Asuma.png',
     difficulty: 'Média',
     tierPve: '?',
     tierPvp: '?',
