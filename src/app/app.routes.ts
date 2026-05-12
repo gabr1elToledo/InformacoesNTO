@@ -14,19 +14,14 @@ export const routes: Routes = [
       {
         path: 'wiki',
         loadComponent: () =>
-            import('./features/wiki/wiki').then((m) => m.Wiki),
-    },
-    {
+          import('./features/wiki/wiki').then((m) => m.Wiki),
+      },
+      {
         path: 'wiki/:slug',
         loadComponent: () =>
-            import('./features/character-detail/character-detail').then(
+          import('./features/character-detail/character-detail').then(
             (m) => m.CharacterDetail
-            ),
-        },
-      {
-        path: 'forum',
-        loadComponent: () =>
-          import('./features/forum/forum').then((m) => m.Forum),
+          ),
       },
       {
         path: 'news',
@@ -34,14 +29,40 @@ export const routes: Routes = [
           import('./features/news/news').then((m) => m.News),
       },
       {
-        path: 'builds',
-        loadComponent: () =>
-          import('./features/builds/builds').then((m) => m.Builds),
-      },
-      {
         path: 'tools',
         loadComponent: () =>
           import('./features/tools/tools').then((m) => m.Tools),
+      },
+      {
+        path: 'tools/mapa',
+        loadComponent: () =>
+          import('./features/tools/map-guide/map-guide').then(
+            (m) => m.MapGuide
+          ),
+      },
+      {
+        path: 'tools/cards',
+        loadComponent: () =>
+          import('./features/tools/cards-guide/cards-guide').then(
+            (m) => m.CardsGuide
+          ),
+      },
+      {
+        path: 'tools/bot-setup',
+        loadComponent: () =>
+          import('./features/tools/bot-setup/bot-setup').then(
+            (m) => m.BotSetup
+          ),
+      },
+      {
+        path: 'items',
+        loadComponent: () =>
+          import('./features/items/items').then((m) => m.Items),
+      },
+      {
+        path: 'quests',
+        loadComponent: () =>
+          import('./features/quests/quests').then((m) => m.Quests),
       },
       {
         path: 'admin',

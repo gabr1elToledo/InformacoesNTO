@@ -1,0 +1,156 @@
+<section class="bot-setup-page">
+  <div class="hero">
+    <h1>Guia de Configuração do Bot</h1>
+    <p>
+      Aprenda a configurar corretamente seu bot para hunts, farm automático,
+      buffs e loot no NTO Ultimate.
+    </p>
+  </div>
+
+  <div class="layout">
+    <aside class="menu-lateral">
+      <button
+        [class.ativo]="abaSelecionada === 'hp'"
+        (click)="selecionarAba('hp')"
+      >
+        ❤️ HP
+      </button>
+
+      <button
+        [class.ativo]="abaSelecionada === 'tools'"
+        (click)="selecionarAba('tools')"
+      >
+        🛠️ Tools
+      </button>
+
+      <button
+        [class.ativo]="abaSelecionada === 'cave'"
+        (click)="selecionarAba('cave')"
+      >
+        🗺️ Cave
+      </button>
+
+      <button
+        [class.ativo]="abaSelecionada === 'target'"
+        (click)="selecionarAba('target')"
+      >
+        🎯 Target
+      </button>
+
+      <button
+        [class.ativo]="abaSelecionada === 'farm'"
+        (click)="selecionarAba('farm')"
+      >
+        🌾 Dicas de Farm
+      </button>
+    </aside>
+
+    <div class="conteudo">
+      @if (abaSelecionada === 'hp') {
+        <div class="card">
+          <h2>Configuração de HP</h2>
+
+          <div class="placeholder-img">
+            <img
+                src="assets/images/bot-setup/hp.png"
+                alt="Configuração HP"
+                class="setup-image"
+                />
+          </div>
+
+          <ul>
+            <li><strong>HealBot:</strong> configure curas automáticas por porcentagem de HP.</li>
+            <li><strong>Eat Food:</strong> mantenha seu personagem alimentado automaticamente.</li>
+            <li><strong>Jutsu de Corrida:</strong> use <code>concentrate chakra feet</code>.</li>
+            <li><strong>Anti Paralyze:</strong> configure o comando <code>kai</code>.</li>
+            <li><strong>Auto Equip:</strong> trocas automáticas de equipamentos se necessário.</li>
+          </ul>
+        </div>
+      }
+
+      @if (abaSelecionada === 'tools') {
+        <div class="card">
+          <h2>Tools / Scripts</h2>
+
+          <div class="placeholder-img">
+            <img
+                src="assets/images/bot-setup/tools.png"
+                alt="Configuração Tools"
+                class="setup-image"
+                />
+          </div>
+
+          <ul>
+            <li>Auto Heal avançado</li>
+            <li>Macros de fuga automática</li>
+            <li>Combos automáticos</li>
+            <li>Treino AFK</li>
+            <li>Buffs automáticos</li>
+            <li>Anti Kick</li>
+            <li>Organização automática de gold</li>
+          </ul>
+        </div>
+      }
+
+      @if (abaSelecionada === 'cave') {
+        <div class="card">
+          <h2>Configuração de Cave</h2>
+
+          <div class="placeholder-img">
+            <img
+                src="assets/images/bot-setup/cave.png"
+                alt="Configuração Cave"
+                class="setup-image"
+                />
+          </div>
+
+          <ul>
+            <li><strong>Auto Recording:</strong> grave seu caminho automaticamente.</li>
+            <li><strong>Waypoints:</strong> configure rotas personalizadas.</li>
+            <li><strong>Move Up / Down:</strong> subir e descer andares.</li>
+            <li><strong>NPC Say:</strong> interagir com NPCs.</li>
+            <li><strong>Sell All:</strong> vender loot automaticamente.</li>
+            <li><strong>Bank:</strong> movimentação automática de gold.</li>
+          </ul>
+        </div>
+      }
+
+      @if (abaSelecionada === 'target') {
+        <div class="card">
+          <h2>Configuração de Target</h2>
+
+          <div class="placeholder-img">
+            <img
+                src="assets/images/bot-setup/target.png"
+                alt="Configuração Target"
+                class="setup-image"
+                />
+          </div>
+
+          <ul>
+            <li>Adicionar monstros prioritários</li>
+            <li>Configurar perigo máximo</li>
+            <li>Capacidade mínima</li>
+            <li>Loot automático</li>
+            <li>Containers específicos para loot</li>
+            <li>Prioridade entre mobs</li>
+          </ul>
+        </div>
+      }
+
+      @if (abaSelecionada === 'farm') {
+        <div class="card">
+          <h2>Dicas de Farm</h2>
+
+          <ul>
+            <li>Combine Cave + Target corretamente.</li>
+            <li>Use alertas de HP para evitar mortes.</li>
+            <li>Organize loot em backpacks separadas.</li>
+            <li>Teste hunts pequenas antes de AFK longo.</li>
+            <li>Use buffs automáticos com cooldown correto.</li>
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

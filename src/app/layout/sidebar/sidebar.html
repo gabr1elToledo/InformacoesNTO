@@ -37,16 +37,6 @@
     </a>
 
     <a
-      routerLink="/forum"
-      title="Fórum"
-    >
-      <span>💬</span>
-      @if (!collapsed) {
-        <span>Fórum</span>
-      }
-    </a>
-
-    <a
       routerLink="/news"
       title="Notícias"
     >
@@ -57,22 +47,26 @@
     </a>
 
     <a
-      routerLink="/builds"
-      title="Builds"
-    >
-      <span>⚔️</span>
-      @if (!collapsed) {
-        <span>Builds</span>
-      }
-    </a>
-
-    <a
       routerLink="/tools"
       title="Ferramentas"
     >
       <span>🧮</span>
       @if (!collapsed) {
         <span>Ferramentas</span>
+      }
+    </a>
+
+    <a routerLink="/items" title="Itens">
+      <span>🎒</span>
+      @if (!collapsed) {
+        <span>Itens</span>
+      }
+    </a>
+
+    <a routerLink="/quests" title="Quests">
+      <span>📜</span>
+      @if (!collapsed) {
+        <span>Quests</span>
       }
     </a>
 

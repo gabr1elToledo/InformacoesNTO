@@ -1,0 +1,71 @@
+<section class="items-page">
+  <div class="hero">
+    <h1>Item Database</h1>
+    <p>Find where every item drops in NTO.</p>
+
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      placeholder="Search item..."
+    />
+  </div>
+
+  <div class="items-grid">
+    @for (item of filteredItems; track item.id) {
+      <div
+        class="item-card"
+        (click)="openItem(item)"
+      >
+        <img
+          [src]="item.image"
+          [alt]="item.name"
+        />
+
+        <div class="item-info">
+          <h3>{{ item.name }}</h3>
+          <span class="category">{{ item.category }}</span>
+          <span class="rarity">{{ item.rarity }}</span>
+        </div>
+      </div>
+    }
+  </div>
+
+  @if (selectedItem) {
+    <div
+      class="modal-overlay"
+      (click)="closeModal()"
+    >
+      <div
+        class="modal"
+        (click)="$event.stopPropagation()"
+      >
+        <button
+          class="close-btn"
+          (click)="closeModal()"
+        >
+          ✕
+        </button>
+
+        <img
+          [src]="selectedItem.image"
+          [alt]="selectedItem.name"
+          class="modal-image"
+        />
+
+        <h2>{{ selectedItem.name }}</h2>
+        <p>{{ selectedItem.description }}</p>
+
+        <div class="drops">
+          <h3>Dropped By</h3>
+
+          @for (drop of selectedItem.drops; track drop.monsterName) {
+            <div class="drop-row">
+              <span>{{ drop.monsterName }}</span>
+              <strong>{{ drop.dropChance }}%</strong>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</section>
