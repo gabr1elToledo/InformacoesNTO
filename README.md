@@ -181,6 +181,7 @@ https://discord.com/invite/JqQkMteB?utm_source=Discord%20Widget&utm_medium=Conne
 
 ---
 
+
 ## 👨‍💻 Desenvolvimento
 
 Projeto em desenvolvimento ativo com foco em performance, UX premium e escalabilidade.
